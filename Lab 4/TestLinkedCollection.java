@@ -7,6 +7,7 @@ public class TestLinkedCollection
     for(int i = 1;i<=5;i++)
     {
       mydata.addL(input());
+     // mydata.addF(input());
     }
       System.out.println(mydata);
    }
