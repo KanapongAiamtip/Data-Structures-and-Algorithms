@@ -1,7 +1,7 @@
 import static java.lang.System.out;
 import java.util.Scanner;
 import java.util.HashSet;
-public class Coffee2
+public class hashsetCoffee2
 {
    public static void main(String[] args)
    {
