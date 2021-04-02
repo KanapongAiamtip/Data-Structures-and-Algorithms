@@ -1,24 +1,30 @@
-public class LinkedCollection{
+public class LinkedCollection
+{
   private int size;
   private LinkedNode first;
-  private static class LinkedNode{
+  private static class LinkedNode
+  {
     Object element;
     LinkedNode next;
-    public LinkedNode(Object obj ,LinkedNode node){
+    public LinkedNode(Object obj ,LinkedNode node)
+    {
       this.element = obj;
       this.next = node;
     }
   }
-  public  LinkedCollection(){
+  public  LinkedCollection()
+  {
       size = 0;
       first = null;
   }
 
-  public int size (){
+  public int size ()
+  {
     return size;
   }
 
-  public void addF(Object obj){
+  public void addF(Object obj)
+  {
     LinkedNode p = new LinkedNode(obj,null);
     p.next = first;
     first  = p;
@@ -26,7 +32,8 @@ public class LinkedCollection{
 
   }
 
-  public String toString(){
+  public String toString()
+  {
      String ans = "";
      LinkedNode p = this.first;
      while(p != null)
