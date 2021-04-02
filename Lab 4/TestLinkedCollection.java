@@ -7,7 +7,7 @@ public class TestLinkedCollection
     for(int i = 1;i<=5;i++)
     {
       mydata.addL(input());
-     // mydata.addF(input());
+     // mydata.addF(input());  if you want test method addF  you can detele  this comment and comment Line 9
     }
       System.out.println(mydata);
    }
