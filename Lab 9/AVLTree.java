@@ -3,25 +3,25 @@
    Node root;
 	// A utility function to get the height of the tree
 	int height(Node N)
-  {
+  	{
 		if (N == null)
-    {
-      return 0;
-    }
+    	{
+      	return 0;
+    	}
 			
 		return N.height;
 	}
 
 	// A utility function to get maximum of two integers
 	int max(int a, int b)
-  {
+	{
 		return (a > b) ? a : b;
 	}
 
 	// A utility function to right rotate subtree rooted with y
 	// See the diagram given above.
 	Node rightRotate(Node y)
-  {
+  	{
 		Node x = y.left;
 		Node T2 = x.right;
 
@@ -40,7 +40,7 @@
 	// A utility function to left rotate subtree rooted with x
 	// See the diagram given above.
 	Node leftRotate(Node x)
-  {
+  	{
 		Node y = x.right;
 		Node T2 = y.left;
 
@@ -58,37 +58,37 @@
 
 	// Get Balance factor of node N
 	int getBalance(Node N)
-  {
+  	{
 		if (N == null)
-    {
-      return 0;
-    }
-			return height(N.left) - height(N.right);
+    	{
+     	 return 0;
+    	}
+		return height(N.left) - height(N.right);
 	}
 
 	Node insert(Node node, int key)
-  {
+  	{
 
 		/* 1. Perform the normal BST insertion */
 		if (node == null)
-    {
-      return (new Node(key));
-    }
+    	{
+      		return (new Node(key));
+    	}
 
 		if (key < node.key)
-    {
-      node.left = insert(node.left, key);
-    }
+    	{
+      		node.left = insert(node.left, key);
+    	}	
 
 		else if (key > node.key)
-    {
-      node.right = insert(node.right, key);
-    }
+    	{
+      		node.right = insert(node.right, key);
+    	}
 
 		else
-    {
-      return node;
-    }// Duplicate keys not allowed
+    	{
+      		return node;
+    	}// Duplicate keys not allowed
 
 
 		/* 2. Update height of this ancestor node */
@@ -102,26 +102,26 @@
 		// If this node becomes unbalanced, then there
 		// are 4 cases Left Left Case
 		if (balance > 1 && key < node.left.key)
-    {
-      return rightRotate(node);
-    }
+    	{
+      		return rightRotate(node);
+    	}
 
 		// Right Right Case
 		if (balance < -1 && key > node.right.key)
-    {
-      return leftRotate(node);
-    }
+    	{
+      		return leftRotate(node);
+    	}
 
 		// Left Right Case
 		if (balance > 1 && key > node.left.key)
-    {
+	    {
 			node.left = leftRotate(node.left);
 			return rightRotate(node);
 		}
 
 		// Right Left Case
 		if (balance < -1 && key < node.right.key)
-    {
+   		{
 			node.right = rightRotate(node.right);
 			return leftRotate(node);
 		}
@@ -133,24 +133,23 @@
 	// The function also prints height of every node
 
 
-	void preOrder(Node node)
-  {
-		if (node != null)
-    {
-			System.out.print(node.key + " ");
-			preOrder(node.left);
-			preOrder(node.right);
-		}
+void preOrder(Node node)
+{
+	if (node != null)
+   	{
+		System.out.print(node.key + " ");
+		preOrder(node.left);
+		preOrder(node.right);
 	}
-  void inOrder(Node node)
-  {
+}
+void inOrder(Node node)
+{
     if(node != null)
-    {
-      inOrder(node.left);
-      System.out.print(node.key+" "); inOrder(node.right);
-
-    }
-  }
+   	{
+      	inOrder(node.left);
+     	System.out.print(node.key+" "); inOrder(node.right);
+   	}
+ }
   void postOrder(Node node)
   {
     if(node !=null)
