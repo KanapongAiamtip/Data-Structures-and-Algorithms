@@ -5,9 +5,9 @@
 	int height(Node N)
   	{
 		if (N == null)
-    	{
-      	return 0;
-    	}
+    		{
+      		  return 0;
+    		}
 			
 		return N.height;
 	}
@@ -60,9 +60,9 @@
 	int getBalance(Node N)
   	{
 		if (N == null)
-    	{
-     	 return 0;
-    	}
+    		{
+     	 	   return 0;
+    		}
 		return height(N.left) - height(N.right);
 	}
 
